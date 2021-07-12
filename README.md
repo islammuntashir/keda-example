@@ -60,9 +60,11 @@ kubectl apply -f deploy/consumer-scaler.yml
 
 ### Generate events in kafka Topic
 
-#Generate event manually 
+####Generate event manually 
+
 kubectl -n kafka run kafka-producer -ti --image=strimzi/kafka:0.18.0-kafka-2.5.0 --rm=true --restart=Never -- bin/kafka-console-producer.sh --broker-list my-cluster-kafka-bootstrap:9092 --topic messages
 
-#Generate Multiple event together
+####Generate Multiple event together
+
 kubectl -n kafka run kafka-producer -ti --image=strimzi/kafka:0.18.0-kafka-2.5.0 --rm=true --restart=Never -- bin/kafka-producer-perf-test.sh --topic messages --throughput 3 --num-records 100 --record-size 4 --producer-props bootstrap.servers=my-cluster-kafka-bootstrap:9092
 
