@@ -19,16 +19,27 @@ kubectl apply -f workload/deploy/kafka-topic.yaml
 ### Install KEDA
 #I have used old version of keda 1.4.0 . I also include new version of deployment in keda folder. Consumer scaller will change depending on this version. Please check keda website
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/crds/keda.k8s.io_scaledobjects_crd.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/crds/keda.k8s.io_triggerauthentications_crd.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/00-namespace.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/01-service_account.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/10-cluster_role.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/11-role_binding.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/12-operator.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/20-metrics-cluster_role.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/21-metrics-role_binding.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/22-metrics-deployment.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/23-metrics-service.yaml
+
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/24-metrics-api_service.yaml
 
 ### Deploy Consumer
