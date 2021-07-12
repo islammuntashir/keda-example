@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer-service
+  namespace: keda-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer-service
+  template:
+    metadata:
+      labels:
+        app: consumer-service
+    spec:
+      containers:
+      - name: simpple-consumer
+        image: <YOUR IMAGE>
+        ports:
+          - containerPort: 8090
+        imagePullPolicy: Always
+        args: ["java", "-jar", "target/simple-consumer-1.0.0-jar-with-dependencies.jar", "my-cluster-kafka-bootstrap.kafka:9092", "testSample", "messages"]
+        resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 500m
+              memory: 200Mi
+      imagePullSecrets:
+        - name: example
