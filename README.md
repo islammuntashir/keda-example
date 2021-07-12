@@ -17,7 +17,7 @@ kubectl apply -f https://strimzi.io/examples/latest/kafka/kafka-persistent-singl
 kubectl apply -f workload/deploy/kafka-topic.yaml
 
 ##### Install KEDA
-# I have used old version of keda 1.4.0 . I also include new version of deployment in keda folder. Consumer scaller will change depending on this version. Please check keda website
+#I have used old version of keda 1.4.0 . I also include new version of deployment in keda folder. Consumer scaller will change depending on this version. Please check keda website
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/crds/keda.k8s.io_scaledobjects_crd.yaml
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/crds/keda.k8s.io_triggerauthentications_crd.yaml
 kubectl apply -f https://raw.githubusercontent.com/kedacore/keda/v1.4.1/deploy/00-namespace.yaml
