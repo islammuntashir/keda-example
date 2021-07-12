@@ -2,7 +2,7 @@ A very simple demo to to show how keda works
 
 Prepare Kafka Cluster
 
-# For simplicity we will Install the latest version of strimzi kafka distribution. There are other installation methods but the following will suffice for experimentation.
+#For simplicity we will Install the latest version of strimzi kafka distribution. There are other installation methods but the following will suffice for experimentation.
 
 # Create Namespace
 kubectl create ns kafka
